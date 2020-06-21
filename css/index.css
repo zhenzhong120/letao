@@ -1,0 +1,121 @@
+/*iphone5*/
+* {margin: 0;padding: 0;}
+/*body{min-width:324px;}*/
+i,a,span{display:block;}    /* 不设置此项，header中的span就掉下去了？？？？*/
+html{font-size:31.25vw;} 
+img{display:block;}
+li {list-style: none;}
+a {text-decoration: none;}
+
+header {
+	width: 100%;
+	height: 35px/*0.35rem;*/;
+   /* height:10%;*/
+	background: #006699;
+	text-align: center;
+    position:fixed;
+    top:0;
+   z-index: 9999;  
+}
+header span,header a {
+	font-size: 16px/*0.16rem*/; 
+	color: white;
+	line-height: 35px/*0.35rem*/;
+	height: 35px;/*0.35rem*/;}
+
+header a {
+	position: absolute;
+	right: 12px;
+	top:0;
+}
+
+.banner {width:100%;height:1.8rem;margin-top:35px;position:relative; }
+.banner ul li img {width:100%;height:1.8rem;}
+ol{
+	position: absolute;
+	bottom: 0.1rem;
+	left:40%;
+}
+ol li{
+	background: gray;	float: left;	width: 8px; /*0.08rem;*/	height: 8px;/*0.08rem;*/	margin-left: /*5px;*/0.05rem;
+	-webkit-border-radius: /*4px;*/0.04rem;-moz-border-radius:/* 4px;*/0.04rem;margin-right:/* 7px;*/0.07rem;
+}
+
+/*.top{display:flex;flex-wrap:wrap;justify-content:space-around;}
+.top img{width:33%;height:0.85rem;/*flex:1;*/} */
+/*
+  图片设置flex:1后，就可以实现自适应了，当浏览器尺寸发生变化时，每一行显示的图片张数会随浏览器的尺寸变大而变多
+ 因为设置的宽度为33%，所以最少每一行显示3张，flex:1;表示图片自动充满每一行的空间！！！
+ */
+
+section{margin:/*7px 7px 10px 10px;*/0.07rem 0.07rem 0.1rem 0.1rem;}
+
+.partition .left{float:left;width:66%;overflow:hidden;}
+.partition .right{float:left;width:34%;}
+.partition .left .left-top img{float:left;/*height:199px;*/height:1.19rem;}
+.partition .left .left-bottom img{float:left;height:/*232px;}*/2.32rem;}
+.partition .right img{/*height:431px;*/width:100%;height:4.31rem;}
+.partition{display:flex;justify-content:space-around;height: 4.31rem;border-top:1px solid gray;padding:0 0.07rem 0.05rem 0.1rem;}
+.partition .left .left-top{width:100%;height:50%;}
+.partition .left .left-bottom{width:100%;margin-top:0;height:50%;}
+.partition .left .left-top .img1,.partition .left .left-bottom .img1{width:48%;height:100%;border:0;}
+.partition .left .left-bottom .img2,.partition .left .left-top .img2{width:52%;height:100%;border:0;}
+.partition .right img{height:100%;}
+
+.brand {margin:/*17px 7px 4px 10px;}*/0.17rem 0.07rem 0.04rem 0.1rem;}
+.brand img{width:100%;height:/*100px;*/1rem;}
+
+.brand-details .brand-details1{display:flex;justify-content:space-around;flex-wrap:wrap;}
+.brand-details .brand-details1 img{width:25%;height:/*93px;*/0.93rem;}
+
+.sport {margin:10px 7px 15px 10px;}/*0.1rem 0.07rem 0.15rem 0.1rem;}*/
+.sport img{width:100%;height:/*100px;*/1rem;}
+
+/*.sport-details{display:flex;justify-content:space-around;flex-wrap:wrap;margin-left:10px;
+}*/
+/*.sport-details .sport-details1{width:48%;border-radius:1px;font-size:0;text-align:center;*/  /*  解决该父级元素中的子元素,span和input之间的默认间距问题*/
+/*box-shadow:1px 1px 3px #e9e9e9,1px -1px 3px #e9e9e9,-1px 1px 3px #e9e9e9,-1px -1px 3px #e9e9e9;
+padding-right:7px;box-sizing:border-box;margin-bottom:7px;} /*设置下和右的间距*/*/
+
+/*.sport-details .sport-details1 img {width:100%;height:1.53rem;margin-bottom:8px;}
+
+.sport-details .sport-details1 span:first-of-type{color:#99999d;font-size:12px;margin-bottom:16px;}
+.sport-details .sport-details1 span:nth-of-type(2){color:red;font-size:12px;display:inline;margin-right:8px;}
+
+.sport-details .sport-details1 span:nth-of-type(3){color:#cccccc;font-size:11px;text-decoration:line-through;display:inline;}
+
+.sport-details .sport-details1 input{background:#006699;color:white;font-size:12px;width:82px;height:32px;margin-bottom:16px;
+margin-top:10px;border:1px solid #cccccc;border-radius:3px;}
+#sport-bottom{margin-bottom:53px;}
+.sport-details .sport-details-bottom{margin-top:0.08rem;}*/
+
+/*
+ 包裹图片和span，input外面的盒子sport-details1不能给高度，给了高度就不能自适应了，当浏览器的尺寸发生改变时，里面的元素会散架
+*/
+
+/*.sport-details .sport-details-top .sport-details-top-left ,
+.sport-details .sport-details-bottom .sport-details-bottom-left 
+{margin-right:8px;}*/
+
+.brand1 {margin:/*17px 7px 4px 10px;} */0.17rem 0.07rem 0.04rem 0.1rem;}
+.brand1 img{width:100%;height:/*200px;*/2rem;}
+.brand2 {margin:/*17px 7px 4px 10px;} */0.17rem 0.07rem 0.04rem 0.1rem;}
+.brand2 img{width:100%;height:/*246px;}*/2.46rem;}
+
+footer{width:100%;height:48px;background:#006699;display:flex; /*保证.home里面的元素垂直居中，需要给父父元素也添加弹性盒子*/
+position:fixed;bottom:0;} 
+
+footer ul{width:100%;display:flex;justify-content:space-around;}
+footer ul li{height:100%;width:25%;}       /*弹性盒子方法*/
+footer ul .home span{font-size:12px;color:white;}
+/*
+footer ul{width:100%;}
+footer ul li{width:25%;float:left;height: 100%;} *//* 浮动方法*/
+
+/*footer ul li:first-of-type{margin-left:112px;}*/
+/*footer ul li:last-of-type{margin-right:98px;}*/ 
+
+footer ul li .home{display:flex;flex-direction:column; height: 100% ;justify-content:center;align-items:center;} /*弹性盒子方法*/
+/*不用弹性盒子，行内块不兼容，只能用margin-top,设置行高等于容器高也不可以}
+footer ul li .home{height:100%;text-align:center;margin-top:10px;}
+
