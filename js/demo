@@ -1,0 +1,75 @@
+    {
+        "cate":[
+            {
+                "categoryName":"运动馆",
+                "categoryId":1
+            },
+            {
+                "categoryName":"女士馆",
+                "categoryId":2
+            },
+             {
+                "categoryName":"男士馆",
+                "categoryId":3
+            },
+             {
+                "categoryName":"帆布馆",
+                "categoryId":4
+            },
+             {
+                "categoryName":"户外馆",
+                "categoryId":5
+            },
+             {
+                "categoryName":"休闲馆",
+                "categoryId":6
+            }
+        ],
+    
+    "cate_list":{
+        "1":[
+            {
+                "id":1,
+                "brandName":"耐克",
+                "brandLogo":"brand1.png",
+                "categoryName":"运动馆"
+            },
+            {
+                "id":2,
+                "brandName":"阿迪",
+                "brandLogo":"brand2.png",
+                "categoryName":"运动馆"
+            },
+            {
+                "id":3,
+                "brandName":"新百伦",
+                "brandLogo":"brand3.png",
+                "categoryName":"运动馆"
+            },
+        ],
+        "2":[
+            {
+                "id":1,
+                "brandName":"耐克",
+                "brandLogo":"brand1.png",
+                "categoryName":"运动馆"
+            },
+            {
+                "id":2,
+                "brandName":"阿迪",
+                "brandLogo":"brand2.png",
+                "categoryName":"运动馆"
+            },
+            {
+                "id":3,
+                "brandName":"新百伦",
+                "brandLogo":"brand3.png",
+                "categoryName":"运动馆"
+            }
+        ]
+    }
+}
+
+
+
+
