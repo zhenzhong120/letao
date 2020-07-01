@@ -1,0 +1,78 @@
+/*iphone5*/
+* {margin: 0;padding: 0;}
+/*body{min-width:324px;}*/
+i,a,span{display:block;}    /* 不设置此项，header中的span就掉下去了？？？？*/
+html{font-size:31.25vw;} 
+img{display:block;}
+li {list-style: none;}
+a {text-decoration: none;}
+/*body{height:100%;} 给内容区设置固定高度不会出现滚动条，设置100%，可以实现高度自适应，但内容区也需要设置百分比*/
+
+header {
+	width: 100%;
+	height: 35px/*0.35rem;*/;
+   /* height:10%;*/
+	background: #006699;
+	text-align: center;
+    position:fixed;
+    top:0;
+   z-index: 9999;  
+}
+header span {
+	font-size: 16px/*0.16rem*/; 
+	color: white;
+	line-height: 35px/*0.35rem*/;
+	height: 35px;/*0.35rem*/
+}
+
+header a:first-of-type {
+	position: absolute;
+	left: 12px;
+	top:0;
+	color: white;
+	height:35px;
+	line-height: 35px;
+	font-size: 16px;
+}
+
+.search{width:95%;height:35px;display:flex;justify-content:space-around;border:1px solid gray;border-radius:6px;margin:50px auto 10px auto;overflow:auto;}
+.search a{font-size:16px;width:20%;height:35px;line-height:35px;color:white;background:darkblue;text-align:center;}
+.search input{border:none;width:80%;height:35px;padding-left:5px;}
+
+/* .history{display:flex;justify-content:space-around;width:95%;} */ 
+ /* 此处的弹性盒子display:flex与在它身上设置的display:block/none冲突 */
+ .history{width:95%;margin-bottom:10px;overflow:hidden;}
+ /*overflow:hidden  解决父元素高度塌陷的问题，子元素全部浮动，父元素没有高度，会引发高度塌陷问题*/
+.history span{font-size:16px;width:55%;float:left;padding-left:5px;}
+#clearb{display:flex;justify-content:flex-end;align-items:center;width:40%;float:right;}
+/* .history span{padding-left:10px;}
+.history a span{margin-left:-45px;} */
+
+
+.historydetails ul li{font-size:12px;border-radius:2px;border:1px solid gray;width:95%;margin-left:7px;margin-top:10px;height:30px;}
+.historydetails ul li {display:flex; justify-content:space-between;height:30px;line-height:30px;}
+.historydetails ul li a{height:30px;line-height:30px;}
+
+.historynone{font-size:12px;margin-left:10px;}
+
+footer{width:100%;height:48px;background:#006699;display:flex; position:fixed;bottom:0;justify-content:space-around;
+/*保证.home里面的元素垂直居中，需要给父父元素也添加弹性盒子*/} 
+footer a{width:25%;height:100%;text-align:center;margin-top:8px;}
+footer a span{font-size:12px;color:white;}
+footer .now{color:orange;}
+ /*
+ 弹性盒子方法
+footer ul{width:100%;display:flex;justify-content:space-around;}
+footer ul li{height:100%;width:25%;}      
+footer ul .home span{font-size:12px;color:white;}
+footer ul li .home{display:flex;flex-direction:column; height: 100% ;justify-content:center;align-items:center;} 
+*/
+/*
+浮动方法
+footer ul{width:100%;}
+footer ul li{width:25%;float:left;height: 100%;} 
+footer ul li .home{height:100%;text-align:center;margin-top:10px;}
+不用弹性盒子，行内块不兼容，只能用margin-top,设置行高等于容器高也不可以
+*/
+
+

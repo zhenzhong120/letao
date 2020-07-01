@@ -1,10 +1,53 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title></title>
-	</head>
-	<body>
-		<p>13</p>
-	</body>
+
+<head>
+
+	<meta charset="utf-8" />
+	<title>传淘云购-搜索中心</title>
+	<link rel="shortcut icon" href="img/images/favicon.ico">
+	</link>
+	<!-- 2、title标题添加图片ico -->
+
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+	<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+
+	<link rel="stylesheet" href="css/iconfont.css" />
+	<link rel="stylesheet" href="css/search.css" />
+	<link rel="stylesheet" href="css/search/iconfont.css" />
+
+</head>
+
+<body>
+	<header>
+		<a href="javascript:history.back();" class="iconfont">&#xe60b;</a> <!-- 1、后退按钮，返回上一步 -->
+		<span>搜索中心</span>
+
+	</header>
+	<div class="search">
+		<input type="text" id="text" placeholder="搜索您喜欢的商品" />
+		<a href="" id="search">搜索</a>
+	</div>
+	<div class="history">
+		<span>搜索历史</span>
+		<a id="clearb" href="javascript:;" class="iconfont icon-qingkonglishijilu"><span id="clear">清空记录</span></a>
+	</div>
+	<div class="historydetails">
+		<ul id="history">
+			<!-- <li><a href="">1</a><a id="clear1" href="javascript:;" class="iconfont icon-chahao"></a></li> -->
+		</ul>
+	</div>
+	<div class="historynone">
+		没有历史搜索记录.
+		</div>
+	<footer>
+		<a href="index.html" class="iconfont icon-iconfonthome0 "><span>首页</span></a>
+		<a href="category.html" class="iconfont icon-fenlei "><span>分类</span></a>
+		<a href="shop.html" class="iconfont icon-fl-gouwuche"><span>购物车</span></a>
+		<a href="member.html" class="iconfont icon-huiyuanzhongxin"><span>会员中心</span></a>
+	</footer>
+	<script src="js/search变量冲突.js"></script>
+</body>
+
 </html>

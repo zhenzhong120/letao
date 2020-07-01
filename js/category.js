@@ -10,7 +10,7 @@ var oUl = document.getElementById('left');
 for(var i = 0,len = arr.length;i<len;i ++){
 	console.log(arr[i].id);
    
-
+//思考：字符串模板方法为什么不行？？？
 
 	// var str1 = `
 	// <li>${arr[i].categoryName}</li>
@@ -25,7 +25,7 @@ for(var i = 0,len = arr.length;i<len;i ++){
 	//5、 注意i的下标为0，需要加恒等号==，等号=不可以
      
 	
-	// li.className = i = 0? "now" : "";
+	// li.className = i == 0? "now" : "";
 	li.innerHTML = arr[i].categoryName;
 	oUl.appendChild(li);
 

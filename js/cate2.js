@@ -16,6 +16,7 @@ for (var i = 0, len = arr.length; i < len; i++) {
     // li.onclick = function showSecond(i){
         
     // }
+    //li.onclick = showSecond(i);
     li.onclick = Function("showSecond('" + i + "');"); //给li绑定事件，并且传参
     // li.setAttribute("onclick", "javascript:showSecond('"+i+"');");
 }
@@ -51,7 +52,6 @@ function secondCategory(i) {
    // 清空上一次二级分类区域的内容
     oUl1.innerHTML = "";
     for (var m = 0; m < secondFirstArr.length; m ++) {
-        
             var oLi = document.createElement('li');
             var oA = document.createElement('a');
             var oImg = document.createElement('img');
@@ -62,7 +62,6 @@ function secondCategory(i) {
             oA.appendChild(oP);
             oLi.appendChild(oA);
             oUl1.appendChild(oLi);
-      
         }   //如果没有对应一级分类品牌id的二级品牌，提示用户当前分类为空
     } else {
         var oLi = document.createElement('li');
