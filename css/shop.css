@@ -1,0 +1,140 @@
+/*iphone5*/
+
+* {margin: 0;padding: 0;}
+/*body{min-width:324px;}*/
+i,a,span{display:block;}    /* 不设置此项，header中的span就掉下去了？？？？*/
+html{font-size:31.25vw;} 
+img{display:block;}
+li {list-style: none;}
+a {text-decoration: none;}
+/*body{height:100%;} 给内容区设置固定高度不会出现滚动条，设置100%，可以实现高度自适应，但内容区也需要设置百分比*/
+
+header {
+	width: 100%;
+	height: 40px/*0.35rem;*/;
+   /* height:10%;*/
+	background: #006699;
+	text-align: center;
+    position:fixed;
+    top:0;
+   z-index: 9999;  
+
+}
+
+#compile,#cart{
+	font-size: 16px/*0.16rem*/; 
+	color: white;
+	line-height: 40px/*0.35rem*/;
+	height: 40px;/*0.35rem*/
+float:left; 
+
+}
+#cart{
+	position:absolute;
+	left:40%;
+}
+#compile{
+	position:absolute;
+	right:45px;
+	color:white;
+}
+header a:first-of-type {
+	position: absolute;
+	left: 12px;
+	top:0;
+	color: white;
+	height:40px;
+	line-height: 40px;
+	font-size: 16px;
+}
+header a:nth-of-type(2){
+    position:absolute;
+    right:12px;
+    top:0;
+    height:40px;
+    line-height:40px;
+}
+
+
+#cartShop{width:100%;margin-bottom:40px;}
+.cart{
+	height:120px;width:100%;/*border-top:1px solid gainsboro;*/display:flex;justify-content:space-between;
+
+}
+
+.left img{height:70px;width:70px;}
+.left input{height:15px;width:15px;position:absolute;bottom:5px;left:5px;} 
+/* 去除元素之间的默认间距，给父元素设置font-size:0; */
+.left{height:120px;width:20%;font-size:0;text-align:left;position: relative;}
+.right{height:120px;width:70%;font-size:0;position: relative;}
+.right .font,.right span {font-size:16px;}
+#price .nowPrice,#price .oldPrice,#price .num{float:left;}
+#size{font-size:16px;}
+#price .nowPrice{color:red;}
+#price .oldPrice{text-decoration:line-through;color:gainsboro;}
+#price .num{margin-left:20px;}
+.row{position:absolute;right:0;top:46px;}
+.right p{white-space:pre-wrap;}
+
+
+#price{overflow:hidden;height:35px;}
+#money p,#money p span,#payment{font-size:14px;}
+#money{width:100%;height:30px;position:fixed;bottom:48px;display:flex;justify-content:space-between;background:white;}
+#money p{display:flex;justify-content:space-around;margin-left:10px;height:30px;line-height:30px;}
+#money p,#money p span{color:red;}
+#payment{width:80px;height:28px;color:white;background:orangered;text-align:center;line-height:28px;border-radius:5px;}
+#sizeNum,#size{height:30px;}
+#allChecked{background:white;height:30px;line-height:30px;color:black;}
+#total{display:inline-block;}
+
+
+
+
+[data-product] .mui-navigate-right{height:150px;margin-top:50px;/*border-top:1px solid black;*/}
+.mui-table-view-cell{margin-top:0;}
+[data-product] .mui-slider-handle{font-size:0;}
+
+#cart_box{margin-top:40px;margin-bottom:80px;}
+#n1{overflow:hidden;}
+#n1 li{float:left;border:1px solid gainsboro;margin:5px; width:28px;height:28px;line-height:28px;text-align:center;background:transparent;}
+#num span,#num input{float:left;}
+#reduce,#number,#add{width:30px;height:30px;border:1px solid gainsboro;color:black;}
+#number{text-align:center;line-height:30px;}
+#num,.size{margin-left:2px;}
+/* 7、padding不可以取负值，margin可以 */
+.form-group{text-align:center;border:1px solid gainsboro;height:50px;width:100%;border-bottom:none;}
+#size,#font{color:black;}
+#input1,#input2{color:blue;font-weight:800;border:none;margin-left:20px;margin-right:20px;height:100%;font-size:16px;}
+#input1{border-right:1px solid gainsboro;padding-right:40px;}
+#pronum{width:150px;height:35px;background:black;color:white;text-align:center;line-height:35px;font-size:16px;border-radius:5px;display:inline-block;}
+
+#numf{width:100%;height:45px;position:fixed;bottom:48px;text-align:center;display:none;z-index:9999;}
+
+
+
+
+
+
+
+
+footer{width:100%;height:48px;background:#006699;display:flex; position:fixed;bottom:0;justify-content:space-around;} 
+/*保证.home里面的元素垂直居中，需要给父父元素也添加弹性盒子*/
+footer a{width:25%;height:100%;text-align:center;margin-top:8px;}
+footer a span{font-size:12px;color:white;}
+footer .now{color:orange;}
+ /*
+ 弹性盒子方法
+footer ul{width:100%;display:flex;justify-content:space-around;}
+footer ul li{height:100%;width:25%;}      
+footer ul .home span{font-size:12px;color:white;}
+footer ul li .home{display:flex;flex-direction:column; height: 100% ;justify-content:center;align-items:center;} 
+*/
+/*
+浮动方法
+footer ul{width:100%;}
+footer ul li{width:25%;float:left;height: 100%;} 
+footer ul li .home{height:100%;text-align:center;margin-top:10px;}
+不用弹性盒子，行内块不兼容，只能用margin-top,设置行高等于容器高也不可以
+*/
+
+

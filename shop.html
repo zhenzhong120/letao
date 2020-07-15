@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8" />
+	<title>传淘云购-搜索中心</title>
+	<meta name="save" content="history">
+	<script src="js/mui.min.js"></script>
+	<link href="css/mui.min.css" rel="stylesheet" />
+
+	<!--	MUI组件使用需要初始化-->
+	<script type="text/javascript" charset="utf-8">
+		mui.init();
+	</script>
+
+	<link rel="shortcut icon" href="img/images/favicon.ico">
+	</link>
+	<!-- 2、title标题添加图片ico -->
+
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+	<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+
+	<link rel="stylesheet" href="css/iconfont.css" />
+	<link rel="stylesheet" href="css/shop.css" />
+	<link rel="stylesheet" href="css/search/iconfont.css" />
+	<link rel="stylesheet" href="css/shop/iconfont.css" />
+	<link rel="stylesheet" href="css/shop1/iconfont.css" />
+
+
+	<!-- 1、!!!!!使用bootstrap框架，必须引入css和js文件 --jquery.js必须在bootstrap.js前面引入，否则模态框的手动关闭方法无法调用-->
+	<link rel="stylesheet" href="css/bootstrap.css" />
+	<script src="js/bootstrap.js"></script>
+	<!-- <script type="text/javascript" src="js/jquery-1.12.4.js"></script> -->
+
+	<!-- 2、css的加载顺序问题导致在外部css文件中设置样式不生效(引入的组件，框架等内容的css设置) -->
+	<style>
+		/*3、margin:0 auto;的另外一种写法*/
+
+		#modalContent {
+			width: 280px;
+			height: 310px;
+			border-radius: 6px;
+			position: relative;
+			margin-top: 150px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.form-group {
+			margin-top: 30px;
+			position: absolute;
+			bottom: 0;
+			margin-bottom: 0;
+		}
+
+
+		#modalContent h4 {
+			margin-top: 10px;
+			text-align: center;
+			font-weight: 800;
+		}
+
+		footer {
+			width: 100%;
+			height: 48px;
+			background: #006699;
+			display: flex;
+			position: fixed;
+			bottom: 0;
+			justify-content: space-around;
+		}
+
+		footer a {
+			width: 25%;
+			height: 100%;
+			text-align: center;
+			margin-top: 8px;
+		}
+
+		footer a span {
+			font-size: 12px;
+			color: white;
+		}
+
+		footer .now {
+			color: orange;
+		}
+
+		#n1 {
+			overflow: hidden;
+		}
+
+		#n1 li {
+			float: left;
+			border: 1px solid gainsboro;
+			margin: 5px;
+			width: 28px;
+			height: 28px;
+			line-height: 28px;
+			text-align: center;
+			background: transparent;
+		}
+
+		#modalRemove {
+			margin-top: 180px;
+			margin-left: auto;
+			margin-right: auto;
+
+		}
+
+		#modalContent1 {
+			width: 240px;
+			height: 130px;
+			text-align: center;
+			border-radius: 8px;
+			position: relative;
+			margin: 0 auto;
+
+		}
+
+
+
+		#modalContent1 h4 {
+			font-size: 20px;
+			font-weight: 800;
+
+		}
+
+		#shopContent1 {
+
+			font-size: 14px;
+			font-weight: 800;
+
+		}
+
+		#input3,
+		#input4 {
+
+			font-size: 18px;
+			color: blue;
+			font-weight: 800;
+			border: none;
+		}
+
+		#form {
+			border-top: 1px solid gainsboro;
+			height: 100%;
+			position: absolute;
+			bottom: -90px;
+			left: 61px;
+			width: 100%;
+			margin-left: -62px;
+		}
+
+		#input3 {
+			border-right: 1px solid gainsboro;
+			padding-right: 10px;
+		}
+
+		#price .nowPrice,
+		#price .oldPrice,
+		#price .num {
+			float: left;
+		}
+
+		#price .nowPrice {
+			color: red;
+		}
+
+		#price .oldPrice {
+			text-decoration: line-through;
+			color: gainsboro;
+		}
+
+		#price .num {
+			margin-left: 20px;
+		}
+		
+	</style>
+</head>
+
+<body>
+	<header>
+		<a href="javascript:history.back();" class="iconfont">&#xe60b;</a>
+		<!-- 1、后退按钮，返回上一步 -->
+		<span id="cart">购物车</span><span id="compile">编辑</span>
+		<a href="#" class="iconfont icon-shuaxin" id="new"></a>
+	</header>
+
+	<!--<div id="cartShop">
+			<div class="cart">
+				<div class="left">
+					<img src="img/images/detail.jpg" />
+					<input type="button" />
+				</div>
+				<div class="right">
+					<p class="font">李宁闪击篮球鞋驭帅10镭射队尚4男韦德之道空袭中高帮队尚3.5篮球鞋</p>
+
+					<p id="price"> <span id="nowPrice">￥499.1</span><span id="oldPrice">￥999.00</span><span id="num">X3双</span>
+						<span class="iconfont icon-jiantou row"></span>
+					</p>
+					<p id="sizeNum">
+						<span id="size">鞋码：43</span>
+					</p>
+				</div>
+			</div>
+		</div>-->
+
+	<!--4、这种是主内容区（满屏）的侧滑菜单，不是购物车的侧滑效果-->
+	<!-- 侧滑导航根容器 -->
+	<!--	<div class="mui-off-canvas-wrap mui-draggable">-->
+	<!-- 主页面容器 -->
+	<!--	<div class="mui-inner-wrap">-->
+	<!-- 菜单容器 -->
+	<!--<aside class="mui-off-canvas-right">
+					<div class="mui-scroll-wrapper"> 
+						<div class="mui-scroll" id="con">-->
+	<!-- 菜单具体展示内容 -->
+	<!--<form>
+							<input type="button" value="编辑" />
+							<input type="button" value="删除" />
+							</form>
+						</div>
+					</div>
+				</aside>
+
+				<div class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">-->
+	<!-- 主界面具体展示内容 -->
+	<!--<div class="cart">
+							<div class="left">
+								<img src="img/images/detail.jpg" />
+								<input type="button" />
+							</div>
+							<div class="right">
+								<p class="font">李宁闪击篮球鞋驭帅10镭射队尚4男韦德之道空袭中高帮队尚3.5篮球鞋</p>
+
+								<p id="price"> <span id="nowPrice">￥499.1</span><span id="oldPrice">￥999.00</span><span id="num">X3双</span>
+									<span class="iconfont icon-jiantou row"></span>
+								</p>
+								<p id="sizeNum">
+									<span id="size">鞋码：43</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>-->
+
+	<div class="mui-table-view" id="cart_box" style="behavior:url(#default#savehistory)"></div>
+	<!--		
+		<div data-product="<%=item.id%>" class="mui-table-view-cell">
+			<div class="mui-slider-right mui-disabled">
+
+				<a data-id="<%=item.id%>" class="mui-btn mui-btn-blue">编辑</a>
+
+				<a data-id="<%=item.id%>" class="mui-btn mui-btn-red">删除</a>
+			</div>
+			<a href="javascript:;" class="mui-navigate-right mui-slider-handle">
+				<div id="cartShop">
+					<div class="cart">
+						<div class="left">
+							<img src="img/images/detail.jpg" />
+							<input type="checkbox" />
+						</div>
+						<div class="right">
+							<p class="font">李宁闪击篮球鞋驭帅10镭射队尚4男韦德之道空袭中高帮队尚3.5篮球鞋</p>
+
+							<p id="price"> <span id="nowPrice">￥499.1</span><span id="oldPrice">￥999.00</span><span id="num">X3双</span>
+								<span class="iconfont icon-jiantou row"></span>
+							</p>-->
+	<!--5、	去除元素/标签之间默认间距的问题：把标签写在一行上-->
+	<!--<p id="sizeNum"><span id="size">鞋码：43</span></p>
+						</div>
+					</div>	
+				</div>
+			</a>
+		</div>-->
+	<div class="modal fade wq-add" id="modalShop">
+		<div class="modal-dialog modal-lg1">
+			<div class="modal-content" id="modalContent">
+
+				<h4>编辑商品</h4>
+				<!-- <div class="form-group">
+					<label for="wq-content" id="shopContent">添加成功，去购物车看看？</label>
+					<br />
+					<input type="button" id="input1" value="是" />
+					<input type="button" id="input2" value="否" />
+				</div> -->
+				<div class="size">
+					<p id="size">尺码：</p>
+					<ul id="n1">
+						<!-- <li>40</li>
+						<li>41</li>
+						<li>42</li>
+						<li>43</li>
+						<li>44</li>
+						<li>45</li>
+						<li>46</li>
+						<li>47</li>
+						<li>48</li>
+						<li>49</li>
+						<li>50</li> -->
+
+					</ul>
+
+				</div>
+				<br>
+				<div class="buy">
+
+					<!--6、实际为了排序input类型不同导致大小不一的情况，可以用span或者a标签模拟，转块，定义一样的宽高-->
+					<p id="num"><span id="font">数量：</span>
+						<input id="reduce" type="button" value="-" /><span id="number"></span><input type="button"
+							value="+" id="add" />
+					</p>
+
+				</div>
+				<br />
+				<div class="form-group">
+
+					<input type="button" id="input1" value="确认" />
+					<input type="button" id="input2" value="取消" />
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+	<div class="modal fade remove" id="modalRemove">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content" id="modalContent1">
+				<h4>温馨提示</h4>
+
+				<div class="form-group1">
+					<label for="wq-content" id="shopContent1">你要删除这件商品吗？</label>
+					<br />
+					<form id="form">
+						<input type="button" id="input3" value="确定" />
+						<input type="button" id="input4" value="取消" />
+					</form>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+
+	<div id="numf">
+		<div id="pronum">
+			<!-- 没有库存了 -->
+		</div>
+
+	</div>
+	<div id="money">
+		<a href="#" id="allChecked">全选</a>
+		<p id="Fatotal">合计：<span id="total">￥0.00元</span></p>
+		<a href="#" id="payment">生成订单</a>
+	</div>
+
+	<footer>
+		<a href="index.html" class="iconfont icon-iconfonthome0 "><span>首页</span></a>
+		<a href="category.html" class="iconfont icon-fenlei "><span>分类</span></a>
+		<a href="shop.html" class=" now iconfont icon-fl-gouwuche"><span class="now">购物车</span></a>
+		<a href="member.html" class="iconfont icon-huiyuanzhongxin"><span>会员中心</span></a>
+	</footer>
+	<script src="js/ajax-o.js"></script>
+	<script src="js/shop.js"></script>
+
+
+</body>
+
+</html>

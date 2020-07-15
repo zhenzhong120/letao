@@ -1,5 +1,4 @@
 /*iphone5*/
-
 * {margin: 0;padding: 0;}
 /*body{min-width:324px;}*/
 i,a,span{display:block;}    /* 不设置此项，header中的span就掉下去了？？？？*/
@@ -40,24 +39,30 @@ header a:first-of-type {
 .search a{font-size:16px;width:20%;height:35px;line-height:35px;color:white;background:darkblue;text-align:center;}
 .search input{border:none;width:80%;height:35px;padding-left:5px;}
 
-/* .history{display:flex;justify-content:space-around;width:95%;} */ 
- /* 此处的弹性盒子display:flex与在它身上设置的display:block/none冲突 */
- .history{width:95%;margin-bottom:10px;overflow:hidden;}
- /*overflow:hidden  解决父元素高度塌陷的问题，子元素全部浮动，父元素没有高度，会引发高度塌陷问题*/
-.history span{font-size:16px;width:55%;float:left;padding-left:5px;}
-#clearb{display:flex;justify-content:flex-end;align-items:center;width:40%;float:right;}
-/* .history span{padding-left:10px;}
-.history a span{margin-left:-45px;} */
-
-
-.historydetails ul li{font-size:12px;border-radius:2px;border:1px solid gray;width:95%;margin-left:7px;margin-top:10px;height:30px;}
-.historydetails ul li {display:flex; justify-content:space-between;height:30px;line-height:30px;}
-.historydetails ul li a{height:30px;line-height:30px;}
-
-.historynone{font-size:12px;margin-left:10px;}
-
+.order a{font-size:12px;color:black;display:flex;height:30px;line-height:30px;}
+.order{display:flex;justify-content:space-around;height:30px;width:100%;background:gainsboro;}
+/* id！！！！！
+当点击当前排序按钮时，给当前排序按钮添加id，设置它的样式为橘色，此处不用class是因为会受上面order a设置颜色的影响，
+class不具有唯一性，不能找到当前a设置样式，所以需要添加id，具有唯一性，虽然上面已经设置过颜色，但是特指
+*/
+.order .selected{color:orange;}
 #prompt{height:35px;background:black;color:white;font-size:16px;position:absolute;bottom:48px;margin-left:50%;
-display:none;}
+	display:none;}
+	
+#product{display:flex;justify-content:space-around;flex-wrap:wrap;margin-left:10px;}
+#product .details{width:48%;border-radius:1px;font-size:0;text-align:center;  /*  解决该父级元素中的子元素,span和input之间的默认间距问题*/
+box-shadow:1px 1px 3px #e9e9e9,1px -1px 3px #e9e9e9,-1px 1px 3px #e9e9e9,-1px -1px 3px #e9e9e9;
+padding-right:7px;box-sizing:border-box;margin-bottom:7px;} /*设置下和右的间距*/
+#product .details img {width:100%;height:1.53rem;margin-bottom:8px;}
+#product .details span:first-of-type{color:#99999d;font-size:12px;margin-bottom:16px;}
+#product .details span:nth-of-type(2){color:red;font-size:12px;display:inline;margin-right:8px;}
+#product .details span:nth-of-type(3){color:#cccccc;font-size:11px;text-decoration:line-through;display:inline;}
+#product .details input{background:#006699;color:white;font-size:12px;width:82px;height:32px;margin-bottom:16px;
+margin-top:10px;border:1px solid #cccccc;border-radius:3px;}
+
+
+
+
 
 
 footer{width:100%;height:48px;background:#006699;display:flex; position:fixed;bottom:0;justify-content:space-around;

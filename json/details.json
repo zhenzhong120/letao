@@ -1,0 +1,14 @@
+{
+    "productId":25,
+    "img":[
+        "product.jpg","detail.jpg","active1.png","active2.png","banner3.png"
+    ],
+    "font":"匡威三星标1970s converse复刻142334c 144757c三星标黑色高帮",
+    "newPrice":"￥499.1",
+    "oldPrice":"￥888.1",
+    "size":[
+        40,41,42,43,45,46,47,48,49,50,51
+    ],
+    "stock":30
+
+}

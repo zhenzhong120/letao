@@ -3,7 +3,7 @@
 $(function () {
     let max_history = 10;
 
-   
+  
     var data = localStorage.getItem('data');
     if (!data) {
         $('.history').css('display', 'none');
@@ -16,9 +16,58 @@ $(function () {
         //如果历史搜索记录中有数据，则调用搜索记录渲染方法
         historydata(JSON.parse(data));
     }
+    //jQuery选择器绑定事件的写法1：
+    $('#search').on('click', function () {
+        //1、如果将此处注释掉，如果没有输入关键字，不会出现提示框，输入内容之后页面也不会进行跳转
+        var str = $('#text').val();
+        //去除空格
+        var key = $.trim(str);
+        if (!key) {
+            //  $('#prompt').html("请输入关键字");
+            $('#prompt').css('display', 'block');
+          
+        }
+         
+        //判断有无历史搜索记录
+        //取出来历史搜索记录 取出来是json对象
+        var data = localStorage.getItem('data');
+        if (data) {
+            var arr = JSON.parse(data);
+        } else {
+            var arr = [];
+        }
+        //将最新搜索的内容添加到历史搜索记录数组中
+        arr.push(str);
+        //去除搜索记录数组的空串和重复搜索记录
+        removalDuplicate(arr);
+        //将用户输入的搜索记录数组json对象改为json字符串存放到历史记录data中，存进去是json字符串
+        localStorage.setItem('data', JSON.stringify(arr));
+    })
 
-    var oA = document.getElementById("search");
-    oA.onclick = function () {
+  //jQuery选择器绑定事件的写法2：
+    $('#search').click(function () {
+        var str = $('#text').val();
+        var key = $.trim(str);
+        if (!key) {
+            //  $('#prompt').html("请输入关键字");
+            $('#prompt').css('display', 'block');
+            //2、如果用户没有输入关键字，将地址重定向到当前页，不会进行页面跳转，并且return false，终止此次事件
+             location.href = "search.html";
+             return false;
+        }
+        //3、如果用户输入了关键字，携带用户输入的关键字跳转到商品列表页
+        location.href="searchList.html?key=" + decodeURIComponent(key);
+        //4、点击搜索按钮，先进行页面跳转，然后回来再进行搜索记录的页面渲染
+        //此处用return false，终止下面给搜索按钮添加的点击事件中的页面渲染效果，即先进行页面跳转
+        return false;
+      
+        
+    })
+
+      //绑定事件的写法3：
+    // var oA = document.getElementById("search");
+    $('#search').click(function(){
+   
         //jquery方法中的得焦事件
         // $('#text').on('focus',function(){  
         //   $('#text').val = '';    
@@ -26,15 +75,17 @@ $(function () {
             $('.history').css('display', 'none');
             $('#historydetails').css('display', 'none');
             $('.historynone').css('display', 'block');
-        } 
+        }
         else {
             $('.history').css('display', 'block');
             $('#historydetails').css('display', 'block');
             $('.historynone').css('display', 'none');
             //如果历史搜索记录中有数据，则调用搜索记录渲染方法
             historydata(JSON.parse(data));
+            //5、输入搜索内容之后，进行页面跳转，跳转回来，搜索记录进行渲染之后，清空输入框的内容
+            $('#text').val("");
         }
-    }
+    })
     //jQuery方法中的失焦事件
     // $('#text').on('blur',function(){
     //     $('.history').css('display','none');
@@ -42,25 +93,10 @@ $(function () {
     //     init_history();
     // })
 
-    var oA = document.getElementById("search");
-    oA.onclick = function () {
-        var str = $('#text').val();
-        //判断有无历史搜索记录
-        //取出来历史搜索记录 取出来是json对象
-        var data = localStorage.getItem('data');
-        if (data) {
-            var arr = JSON.parse(data);   
-        } else {
-            var arr = [];
-        }
-        //将最新搜索的内容添加到历史搜索记录中
-        arr.push(str);
-        //去除空串和重复搜索记录
-        removalDuplicate(arr);
-        //将用户输入的搜索记录json对象改为json字符串存放到历史记录data中，存进去是json字符串
-        localStorage.setItem('data', JSON.stringify(arr));
-    }
-    // $('#search').on('onclick',function(){
+    // var oA = document.getElementById("search");
+    // oA.onclick = function () {
+        //$('#search').click(function () {
+    // $('#search').on('click',function(){
     //     console.log(0);
     //     var str = $('#text').value;
     //     var data = localStorage.getItem('data');
@@ -101,10 +137,10 @@ $(function () {
     // window.clearOnclick = function (i) {
     //     console.log(i);
     // }
-    
+
     //渲染历史搜索记录
     function historydata(searchArr) {
-       // 逆序存放原数组中的元素：
+        // 逆序存放原数组中的元素：
         //1）数组的方法；
         //2）也可以在渲染数组时，按照i=arr.length-1;i>=0;i -- 的思想渲染历史记录数据
         // searchArr.reverse();
@@ -117,63 +153,70 @@ $(function () {
         // } else {
         //     max = max_history;
         // }
-
+       
         //优化代码：用三元法判断历史搜索记录是否大于历史搜索记录限定的最大条数；如果小于，则max等于输入的条数；大于，则max等于限定条数
         var max = searchArr.length <= max_history ? searchArr.length : max_history;
         //循环遍历，渲染数据，循环中就要创建元素，并且绑定事件，否则在当前局部作用域外无法获取i的值，只能取到length-1的i值
         //整个循环从页面加载开始执行，只遍历一次，从i=0遍历到i=length-1,在此循环的过程中就绑定上了事件，但只有在点击的时候才会触发该方法
         //并且在循环过程中绑定事件，就要传值变量i出去，这样外面才可以取到遍历过程中每一个i的值
         //id值具有唯一性，所以在创建元素并且给每一个元素添加绑定事件时，需要给每一元素添加一个不一样的id值，否则id值一样，无法判断获取到的是哪一个元素
-        for (let i = 0; i < max; i++) {
+        for (let i = 0; i < max; i ++) {
             //给每一个创建出来的叉号按钮绑定事件的方法1----行内引入js,需要传值，将每一次遍历的变量i传出去
             // $('#history').append(`<li><a href="">${searchArr[i]}</a><a  id="clear${i}"  onClick="javascript:clearOnclick('${i}');"  class="iconfont icon-chahao"></a></li>`);
-            $('#history').append(`<li><a href="">${searchArr[i]}</a><a  id="clear${i}" class="iconfont icon-chahao"></a></li>`);
- 
+            $('#history').append(`<li><a id="loca${i}" href="">${searchArr[i]}</a><a  id="clear${i}" class="iconfont icon-chahao"></a></li>`);
+    
+            //点击列表形式展示的历史搜索记录，也会跳转到商品列表页
+            $(`#loca${i}`).click(function(){
+               
+                location.href="searchList.html?key=" + `${searchArr[i]}`;
+                return false;
+            });
+         
             //给每一个创建出来的叉号绑定事件的方法2：在循环过程中添加事件，每一次循环都要创建该元素，并且给该元素绑定事件，也要传值i
             // oAclear.onclick = Function("clearOnclick('" + i + "');");
             // li.onclick = Function("showSecond('" + i + "');"); //给li绑定事件，并且传参
-          var a = document.getElementById(`clear${i}`);
-           a.onclick = function(){
-               console.log(localStorage);
-            
-            this.parentNode.remove();
-            //刷新页面
-            location.reload([true]);
-//             var data = localStorage.getItem('data');
-               f(i);
-               function f(i){
-                var list = JSON.parse(localStorage.getItem('data'));
-                list.splice(i, 1);
-                localStorage.setItem('data', JSON.stringify(list));
-                // localStorage.removeItem(data); 删除历史搜索记录，只能通过key来删除，历史记录中存放的数据是键值对的形式
-                // 但是此处如果用key，data的形式删除的话，相当于数组中存放的所有历史记录都删除了，所以先将历史记录取出来转成对象数组，
-                // 然后删除数组中指定下标的元素，最后再将删完之后的数组以字符串的形式存入历史记录的data属性中
-                // 自动刷新页面
-                history.go(0);
-            }
-            
-           }
-          
+            // var a = document.getElementById(`clear${i}`);
       
+            $(`#clear${i}`).click(function(){
+          
+                this.parentNode.remove();
+                //刷新页面
+                location.reload([true]);
+                //             var data = localStorage.getItem('data');
+                f(i);
+                function f(i) {
+                    var list = JSON.parse(localStorage.getItem('data'));
+                    list.splice(i, 1);
+                    localStorage.setItem('data', JSON.stringify(list));
+                    // localStorage.removeItem(data); 删除历史搜索记录，只能通过key来删除，历史记录中存放的数据是键值对的形式
+                    // 但是此处如果用key，data的形式删除的话，相当于数组中存放的所有历史记录都删除了，所以先将历史记录取出来转成对象数组，
+                    // 然后删除数组中指定下标的元素，最后再将删完之后的数组以字符串的形式存入历史记录的data属性中
+                    // 自动刷新页面
+                    history.go(0);
+                }
+
+            })
+
+
         }
     }
-//jQuery选择器绑定方法：click事件,不是onclick事件驱动
-    $('#clear').on('click',function(){
+    //jQuery选择器绑定方法：click事件,不是onclick事件驱动
+    $('#clear').on('click', function () {
         $('#history').html('');
-         localStorage.clear();
-         //自动刷新页面
-       history.go(0);
-        
+        localStorage.clear();
+        //自动刷新页面
+        history.go(0);
+
     })
     //清空所有历史记录
     //原生DOM元素绑定事件方法：onclick 事件驱动
-// var oClear = document.getElementById('clear');
-// oClear.onclick = function(){
-//     $('#history').html('');
-//    localStorage.clear();
-//    //自动刷新页面
-//    history.go(0);
-// }
+    // var oClear = document.getElementById('clear');
+    // oClear.onclick = function(){
+    //     $('#history').html('');
+    //    localStorage.clear();
+    //    //自动刷新页面
+    //    history.go(0);
+    // }
     // function init_history() {
     //     $('#history').html('');
     // }
@@ -212,11 +255,6 @@ $(function () {
           // 3、for里面声明变量m，如果用let,点击每一个叉号，此处输出的m值都是list.length-1;
            // 如果是var声明变量m，点击每一个叉号，此处输出的m值都是list.lenght;
 
-
-    // 思考：为什么jquery方法没有绑定成功事件
-    // $('clear1').on('onclick',function(){
-    //     $(this).parentNode.remove();
-    // })
 
     //留言板效果，不具有历史搜索记录缓存功能
     //  var str = localStorage.historyItems;

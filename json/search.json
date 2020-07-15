@@ -1,0 +1,69 @@
+{
+    "page":1,
+    "size":8,
+    "data":[
+        {
+            "id":20,
+            "proName":"adidas阿迪达斯 男式 场下休闲篮球鞋S83700",
+            "money":"￥560.00",
+            "dead_money":"￥888.00",
+            "img":"product.jpg",
+            "bt_name":"立即购买",
+            "bt_id":5
+        },
+        {
+            "id":21,
+            "proName":"adidas阿迪达斯 男式 场下休闲篮球鞋S83700",
+            "money":"￥560.00",
+            "dead_money":"￥888.00",
+            "img":"product.jpg",
+            "bt_name":"立即购买",
+            "bt_id":4
+        },
+        {
+            "id":22,
+            "proName":"adidas阿迪达斯 男式 场下休闲篮球鞋S83700",
+            "money":"￥560.00",
+            "dead_money":"￥888.00",
+            "img":"product.jpg",
+            "bt_name":"立即购买",
+            "bt_id":3
+        },
+        {
+            "id":23,
+            "proName":"adidas阿迪达斯 男式 场下休闲篮球鞋S83700",
+            "money":"￥560.00",
+            "dead_money":"￥888.00",
+            "img":"product.jpg",
+            "bt_name":"立即购买",
+            "bt_id":2
+        },
+        {
+            "id":24,
+            "proName":"adidas阿迪达斯 男式 场下休闲篮球鞋S83700",
+            "money":"￥560.00",
+            "dead_money":"￥888.00",
+            "img":"product.jpg",
+            "bt_name":"立即购买",
+            "bt_id":1
+        },
+        {
+            "id":25,
+            "proName":"adidas阿迪达斯 男式 场下休闲篮球鞋S83700",
+            "money":"￥560.00",
+            "dead_money":"￥888.00",
+            "img":"product.jpg",
+            "bt_name":"立即购买",
+            "bt_id":7
+        },
+        {
+            "id":26,
+            "proName":"adidas阿迪达斯 男式 场下休闲篮球鞋S83700",
+            "money":"￥560.00",
+            "dead_money":"￥888.00",
+            "img":"product.jpg",
+            "bt_name":"立即购买",
+            "bt_id":6
+        }
+    ]
+}

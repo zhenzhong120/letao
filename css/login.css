@@ -35,29 +35,26 @@ header a:first-of-type {
 	line-height: 35px;
 	font-size: 16px;
 }
+#reg{font-size:16px;}
+form input{width:90%;height:35px;border:none;}
+#login{background:skyblue;border-radius:4px;margin-top:5px;font-size:18px;color:white;font-weight:800;}
+form{text-align:center;font-size:0;margin-top:50px;}
+#name,#password{border:1px solid gainsboro;border-radius:4px;margin-bottom:10px;padding-left:5px;font-size:16px;}
+#free{width:90%;text-align:right;margin-top:20px;margin-right:5px;}
+/*设置了宽度100%后，不能再设置margin/padding-left/right*/
+/*a是行内元素，不可以定义宽高，需要转块才可以
+text-align只对行内元素和行内块元素有作用，设置在父元素上，但是块元素不可以；
+所以此处给a转块定义宽高和给它的父元素设置text-align不能同时进行*/
+/*兼容pc端和移动端，样式布局要灵活，不写固定px单位，必须设置用%比*/
+#word{position:relative;}
+#img{position:absolute;right:10%;top:15%;}
 
-.search{width:95%;height:35px;display:flex;justify-content:space-around;border:1px solid gray;border-radius:6px;margin:50px auto 10px auto;overflow:auto;}
-.search a{font-size:16px;width:20%;height:35px;line-height:35px;color:white;background:darkblue;text-align:center;}
-.search input{border:none;width:80%;height:35px;padding-left:5px;}
-
-/* .history{display:flex;justify-content:space-around;width:95%;} */ 
- /* 此处的弹性盒子display:flex与在它身上设置的display:block/none冲突 */
- .history{width:95%;margin-bottom:10px;overflow:hidden;}
- /*overflow:hidden  解决父元素高度塌陷的问题，子元素全部浮动，父元素没有高度，会引发高度塌陷问题*/
-.history span{font-size:16px;width:55%;float:left;padding-left:5px;}
-#clearb{display:flex;justify-content:flex-end;align-items:center;width:40%;float:right;}
-/* .history span{padding-left:10px;}
-.history a span{margin-left:-45px;} */
-
-
-.historydetails ul li{font-size:12px;border-radius:2px;border:1px solid gray;width:95%;margin-left:7px;margin-top:10px;height:30px;}
-.historydetails ul li {display:flex; justify-content:space-between;height:30px;line-height:30px;}
-.historydetails ul li a{height:30px;line-height:30px;}
-
-.historynone{font-size:12px;margin-left:10px;}
-
-#prompt{height:35px;background:black;color:white;font-size:16px;position:absolute;bottom:48px;margin-left:50%;
-display:none;}
+#promptLogin{width:150px;height:35px;background:black;color:white;text-align:center;line-height:35px;
+	font-size:16px;border-radius:5px;display:inline-block;}
+	/*text-align:center;只对文本和行内块，行内块元素起作用*/
+#prompt{width:100%;height:45px;position:fixed;bottom:48px;text-align:center;display:none;}
+	/* .now{background:orange;} */
+	
 
 
 footer{width:100%;height:48px;background:#006699;display:flex; position:fixed;bottom:0;justify-content:space-around;
@@ -79,5 +76,6 @@ footer ul li{width:25%;float:left;height: 100%;}
 footer ul li .home{height:100%;text-align:center;margin-top:10px;}
 不用弹性盒子，行内块不兼容，只能用margin-top,设置行高等于容器高也不可以
 */
+
 
 

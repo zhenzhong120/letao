@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>传淘云购-搜索中心</title>
+    <link rel="shortcut icon" href="img/images/favicon.ico">
+    </link>
+    <!-- 2、title标题添加图片ico -->
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+
+    <link rel="stylesheet" href="css/iconfont.css" />
+    <link rel="stylesheet" href="css/search/iconfont.css" />
+    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="css/login/iconfont.css" />
+    <style>
+        #promptLogin {
+            width: 200px;
+            height: 40px;
+            background: black;
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            font-size: 16px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        /*text-align:center;只对文本和行内块，行内块元素起作用*/
+        #prompt {
+            width: 100%;
+            height: 75px;
+            position: fixed;
+            bottom: 100px;
+            text-align: center;
+            display: none;
+        }
+
+        /* .now{background:orange;} */
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="javascript:history.back();" class="iconfont">&#xe60b;</a> <!-- 1、后退按钮，返回上一步 -->
+        <span>登录</span>
+
+    </header>
+    <form>
+        <!-- 单标记元素无法使用iconfont图标 -->
+        <input type="text" placeholder="用户名/手机号" id="name" />
+        <div id="word">
+            <input class="iconfont icon-xianshikejian" type="password" placeholder="密码" id="password" /><span id="img"
+                class="iconfont icon-xianshikejian"></span>
+        </div>
+        <!-- <br/> -->
+        <input type="button" value="登录" id="login" />
+
+    </form>
+    <div id="free">
+        <a href="registor.html" id="reg">免费注册</a>
+    </div>
+    <div id="prompt">
+        <div id="promptLogin">
+            <!-- 请输入用户名或者手机号 -->
+        </div>
+
+    </div>
+
+
+    <footer>
+        <a href="index.html" class="iconfont icon-iconfonthome0 "><span>首页</span></a>
+        <a href="category.html" class="iconfont icon-fenlei "><span>分类</span></a>
+        <a href="shop.html" class="iconfont icon-fl-gouwuche"><span>购物车</span></a>
+        <a href="member.html" class="iconfont icon-huiyuanzhongxin"><span>会员中心</span></a>
+    </footer>
+    <script src="js/login.js"></script>
+    <script src="js/ajax.js"></script>
+</body>
+
+</html>
