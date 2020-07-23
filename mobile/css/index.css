@@ -10,7 +10,7 @@ a {text-decoration: none;}
 
 header {
 	width: 100%;
-	height: 35px/*0.35rem;*/;
+	height: 40px/*0.35rem;*/;
    /* height:10%;*/
 	background: #006699;
 	text-align: center;
@@ -21,8 +21,8 @@ header {
 header span,header a {
 	font-size: 16px/*0.16rem*/; 
 	color: white;
-	line-height: 35px/*0.35rem*/;
-	height: 35px;/*0.35rem*/;}
+	line-height: 40px/*0.35rem*/;
+	height: 40px;/*0.35rem*/;}
 
 header a {
 	position: absolute;

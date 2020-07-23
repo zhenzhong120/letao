@@ -1,0 +1,40 @@
+{
+    "page" : 1,
+    "size" : 5,
+    "total" : 30,
+    "data" :[
+        {
+            "id" : 1,
+            "firstCategory" : "运动馆",
+            "secondCategory" : "阿迪",
+            "logoImg" : "brand1.png"
+        },
+        {
+            "id" : 2,
+            "firstCategory" : "运动馆",
+            "secondCategory" : "耐克",
+            "logoImg" : "brand2.png"
+        },
+        {
+            "id" : 3,
+            "firstCategory" : "运动馆",
+            "secondCategory" : "李宁",
+            "logoImg" : "brand3.png"
+        },
+        {
+            "id" : 4,
+            "firstCategory" : "运动馆",
+            "secondCategory" : "新百伦",
+            "logoImg" : "brand4.png"
+        },
+        {
+            "id" : 5,
+            "firstCategory" : "运动馆",
+            "secondCategory" : "鸿星尔克",
+            "logoImg" : "brand5.png"
+        }
+
+      
+  
+    ]   
+}

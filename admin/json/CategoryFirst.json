@@ -1,0 +1,22 @@
+{
+    "page" : 1,
+    "size" : 3,
+    "total" : 6,
+    "data" :[
+        {
+            "id" : 1,
+            "firstCategory" : "运动馆"
+        },
+        {
+            "id" : 2,
+            "firstCategory" : "男士馆"
+        },
+        {
+            "id" : 3,
+            "firstCategory" : "女士馆"
+        }
+
+      
+  
+    ]   
+}

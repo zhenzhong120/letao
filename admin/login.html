@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>后台管理系统</title>
+    <link rel="shortcut icon" href="img/favicon.ico">
+    </link>
+    <!-- 2、title标题添加图片ico -->
+
+    <link rel="stylesheet" href="css/iconfont.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" />
+    <!--检验插件的样式-->
+    <link rel="stylesheet" href="assets/bootstrapValidator/bootstrapValidator.min.css">
+
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.js"></script>
+    <!--检验插件的脚本-->
+    <script src="assets/bootstrapValidator/bootstrapValidator.min.js"></script>
+    <link rel="stylesheet" href="assets/nprogress/nprogress.css" />
+    <script src="assets/nprogress/nprogress.js"></script>
+    <link rel="stylesheet" href="css/login.css" />
+
+</head>
+
+
+
+
+<body class="bg_login">
+<!-- bootstrap框架中的布局 -->
+    <div class="container">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-primary mt_150">
+                <div class="panel-heading text-center">
+                    <h4>后台管理系统</h4>
+                </div>
+                <div class="panel-body">
+                    <form id="denglu" class="form-horizontal" autocomplete="off">
+                        <div class="form-group">
+                            <label for="inputUserName3" class="col-sm-3 control-label">用户名</label>
+                            <div class="col-sm-9">
+                                <input name="username" type="text" class="form-control" id="inputUserName3"
+                                    placeholder="请输入用户名">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-3 control-label">密码</label>
+                            <div class="col-sm-9">
+                                <input name="password" type="password" class="form-control" id="inputPassword3"
+                                    placeholder="请输入密码">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-10">
+                                <button type="reset" class="btn btn-default mr_50">重置</button>
+                                <button type="submit" class="btn btn-primary">登录</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- !!!登录表单校验插件
+    表单内的name属性和id属性不能使用表单元素，例如：submit、reset、length、method等
+    form不可设定为form,用户名的input name必须为username，密码的input name属性值必须是password 才生效
+总结-->
+   
+
+<!-- <form id="login" class="form-horizontal" autocomplete="off">
+                        <h4>后台管理系统</h4>
+                        <div class="form-group">
+                            <label for="inputName" class="  control-label">用户名</label>
+
+
+                            <input type="text" id="inputName" name="username"  placeholder="请输入用户名">
+
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword" class="  control-label">密码</label>
+
+                            <input type="password" id="inputPassword" name="password" 
+                                placeholder="请输入密码">
+
+                        </div>
+                        <div class="form-group">
+
+                            <button type="reset" class="btn btn-default" id="reset">重置</button>
+                            <button type="submit" class="btn btn-primary" id="primary">登录</button>
+
+                        </div>
+                    </form> -->
+
+   
+
+    <script src="js/cookie.js"></script>
+    <script src="js/login.js"></script>
+   
+</body>
+
+</html>

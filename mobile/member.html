@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>传淘云购-搜索中心</title>
+    <link rel="shortcut icon" href="img/images/favicon.ico">
+    </link>
+    <!-- 2、title标题添加图片ico -->
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+
+    <link rel="stylesheet" href="css/iconfont.css" />
+    <link rel="stylesheet" href="css/member.css" />
+    <link rel="stylesheet" href="css/search/iconfont.css" />
+    <link rel="stylesheet" href="css/shop/iconfont.css" />
+    <link rel="stylesheet" href="css/shop1/iconfont.css" />
+    <style>
+        .user img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .right p {
+            font-size: 16px;
+        }
+
+        .user {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            border-bottom: 1px solid gainsboro;
+            background: ghostwhite;
+            height: 60px;
+            width: 100%;
+
+        }
+
+        .user span {
+            margin-top: 20px;
+        }
+
+        .left {
+            height: 50px;
+            width: 260px;
+        }
+
+        .left img,
+        .right {
+            float: left;
+        }
+
+        .right {
+            margin-left: 10px;
+        }
+
+        .account p {
+            font-size: 18px;
+        }
+
+        .account {
+            display: flex;
+            justify-content: space-between;
+            height: 50px;
+            width: 100%;
+            border-bottom: 1px solid gainsboro;
+            background: ghostwhite;
+            line-height: 50px;
+            padding-left: 5px;
+        }
+
+        .account span {
+            padding-right: 5px;
+        }
+
+        form {
+            margin-top:20px;
+            width: 100%;
+            height: 30px;
+            font-size: 0;
+            text-align:center;
+        }
+
+        form input {
+            width: 80%;
+            height: 30px;
+            line-height: 30px;
+            font-size:16px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="javascript:history.back();" class="iconfont">&#xe60b;</a> <!-- 1、后退按钮，返回上一步 -->
+        <span>个人中心</span>
+
+    </header>
+
+
+    <div class="user">
+        <div class="left">
+            <img src="img/images/user.jpg" />
+            <div class="right">
+                <p>itcast</p>
+                <p id="phone">绑定手机：15123514568</p>
+            </div>
+        </div>
+        <span class="iconfont icon-jiantou row"></span>
+    </div>
+    <div class="account" id="account">
+        <p>账号与安全</p>
+        <span class="iconfont icon-jiantou row"></span>
+    </div>
+
+    <div class="account cart" id="cart">
+        <p>我的购物车</p>
+        <span class="iconfont icon-jiantou row"></span>
+    </div>
+    <div class="account address"id="address">
+        <p>收货地址管理</p>
+        <span class="iconfont icon-jiantou row"></span>
+    </div>
+    <form>
+        <input type="button" value="退出登录" />
+    </form>
+
+
+    <footer>
+        <a href="index.html" class="iconfont icon-iconfonthome0 "><span>首页</span></a>
+        <a href="category.html" class="iconfont icon-fenlei "><span>分类</span></a>
+        <a href="shop.html" class="iconfont icon-fl-gouwuche"><span>购物车</span></a>
+        <a href="member.html" class="iconfont icon-huiyuanzhongxin now"><span class="now">会员中心</span></a>
+    </footer>
+    <script src="js/member.js"></script>
+</body>
+
+</html>
